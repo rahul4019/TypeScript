@@ -15,4 +15,20 @@ function createCourse(): { name: string; price: number } {
   return { name: 'Next.js', price: 999 };
 }
 
+// * Type Aliases
+
+type Student = {
+  name: string;
+  email: string;
+  isActive: boolean;
+};
+
+function createStudent(student: Student): Student {
+  return { name: '', email: '', isActive: false };
+}
+
+createStudent({ name: '', email: '', isActive: false });
+
+// type myString  = string
+
 export {};
