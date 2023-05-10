@@ -14,3 +14,14 @@ createUser(newUser); // * weired behaviour of JavaScript
 function createCourse() {
     return { name: 'Next.js', price: 999 };
 }
+function createStudent(student) {
+    return { name: '', email: '', isActive: false };
+}
+createStudent({ name: '', email: '', isActive: false });
+var myCustomer = {
+    _id: '12345',
+    name: 'r',
+    email: 'abc@gmail.com',
+    isActive: false,
+};
+myCustomer.email = 'a@gmail.com';
