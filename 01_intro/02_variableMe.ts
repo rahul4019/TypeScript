@@ -17,4 +17,14 @@ let isLoggedIn: boolean = false;
 
 console.log(isLoggedIn.valueOf());
 
+// any
+let animal: string;
+
+function getExample() {
+//   return true;  => will show an error because it is returning boolean
+  return "Dog";
+}
+
+animal = getExample();
+
 export {};
