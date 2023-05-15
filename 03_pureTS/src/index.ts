@@ -10,7 +10,8 @@
 // }
 
 class User {
-  private _courseCount = 1;
+  // private _courseCount = 1;
+  protected _courseCount = 1; // * Accessible to own class and to the class which inherits this class
 
   private readonly prop: number = 12;
   constructor(
@@ -19,8 +20,8 @@ class User {
   ) {}
 
   // * Private method (not accessible outside the class)
-  private deleteToken(){
-    console.log(`Token deleted`)
+  private deleteToken() {
+    console.log(`Token deleted`);
   }
 
   // * Getter
@@ -40,9 +41,15 @@ class User {
   }
 }
 
+class SubUser extends User {
+  isFamily: boolean = true;
+  changeCourseCount() {
+    this._courseCount = 4;
+  }
+}
+
 const rahul = new User('rahul@gmail.com', 'rahul');
 // rahul.city = 'Delhi';
 // rahul.prop
-
 
 // rahul.deleteToken

@@ -14,7 +14,8 @@ class User {
     ) {
         this.email = email;
         this.name = name;
-        this._courseCount = 1;
+        // private _courseCount = 1;
+        this._courseCount = 1; // * Accessible to own class and to the class which inherits this class
         this.prop = 12;
     }
     // * Private method (not accessible outside the class)
@@ -33,6 +34,15 @@ class User {
         if (courseNum <= 1)
             throw new Error('Course count should be more than 1 ');
         this._courseCount = courseNum;
+    }
+}
+class SubUser extends User {
+    constructor() {
+        super(...arguments);
+        this.isFamily = true;
+    }
+    changeCourseCount() {
+        this._courseCount = 4;
     }
 }
 const rahul = new User('rahul@gmail.com', 'rahul');
