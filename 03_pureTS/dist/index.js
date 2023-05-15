@@ -10,12 +10,32 @@
 //   }
 // }
 class User {
-    constructor(email, name) {
+    constructor(email, name // private userId: string
+    ) {
         this.email = email;
         this.name = name;
+        this._courseCount = 1;
         this.prop = 12;
+    }
+    // * Private method (not accessible outside the class)
+    deleteToken() {
+        console.log(`Token deleted`);
+    }
+    // * Getter
+    get getAppleEmail() {
+        return `apple${this.email}`;
+    }
+    get courseCount() {
+        return this._courseCount;
+    }
+    // * Setter   => TypeScript doesn't allow a return type for Setters
+    set courseCount(courseNum) {
+        if (courseNum <= 1)
+            throw new Error('Course count should be more than 1 ');
+        this._courseCount = courseNum;
     }
 }
 const rahul = new User('rahul@gmail.com', 'rahul');
 // rahul.city = 'Delhi';
 // rahul.prop
+// rahul.deleteToken
