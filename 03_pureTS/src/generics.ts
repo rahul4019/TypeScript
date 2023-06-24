@@ -28,5 +28,20 @@ interface Bottle {
   type: string;
 }
 
-identityFour<Bottle>({ brand: 'one', type: 'two' });
-void {};
+// identityFour<Bottle>({ brand: 'one', type: 'two' });
+// void {};
+
+function searchProducts<T>(products: T[]): T {
+  // do some database operations
+  const myIndex = 3;
+  return products[myIndex];
+  //* When you are accepting parameters as array of T types
+  //* then return value should be one of value of that array
+}
+
+// How to convert above function in arrow function?
+const moreSearchProducts = <T>(products: T[]): T => {
+  // do some database operations
+  const myIndex = 4;
+  return products[myIndex];
+};
